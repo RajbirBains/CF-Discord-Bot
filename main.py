@@ -4,7 +4,7 @@ Rajbir Bains
 
 Future projects
 - replace prints with logging system
-- move everything from one file to multiple files/classes
+- move everything from one file to multiple files/classes (done)
 
 
 Notes:
@@ -27,8 +27,6 @@ COMMAND_PREFIX = '!'
 
 load_dotenv(dotenv_path='venv/.env') # Loading token from env file
 TOKEN = os.getenv('DISCORD_TOKEN') # token - sensitive information that links the bot
-
-#print(TOKEN) only printed for debugging, token is sensitive info do not uncomment
 
 
 # Set up the bot
