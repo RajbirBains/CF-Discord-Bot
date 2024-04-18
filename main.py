@@ -51,7 +51,6 @@ async def on_ready():
 
 def main():
     cLog = DiscLog() # log for errors (Add more complex later)
-    print("Test")
 
     asyncio.run(load_cogs())
     bot.run(token = TOKEN, log_handler= cLog.handler) # runs the bot
