@@ -13,7 +13,7 @@ Notes:
 
 import os
 from dotenv import load_dotenv
-from discord import Intents, Client, Message, VoiceChannel, VoiceState
+from discord import Intents, Client, Message, VoiceChannel, VoiceState, Game, Status
 from discord.ext import commands
 from other.responses import get_response
 from other.botlogging import DiscLog
@@ -45,6 +45,10 @@ async def load_cogs():
 @bot.event  # @bot.event is an event listener for the bot - listens for specific event defined by function name (eg. async def on_member_join()) # list of other events found here https://discordpy.readthedocs.io/en/stable/api.html
 async def on_ready():
     print(f'{bot.user} is now running') # Bot will print in console when started
+
+    # Setting bot status activity
+    activity = Game(name="Watching the Canucks")
+    await bot.change_presence(status=Status.online, activity=activity)
 
 
 def main():
