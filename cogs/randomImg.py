@@ -36,10 +36,15 @@ class RandomImage(commands.Cog):
             print("response code is " + str(api_response.status_code))
             json_data = json.loads(api_response.text)
             print(json_data)
-            quote = json_data["message"]
-            await ctx.send(quote)
+            pic = json_data["message"]
+
+            embedded_msg = discord.Embed(title="Doggo", description="Picture of Doggo", color=discord.Color.blue())
+            embedded_msg.set_author(name=f"Requested by {ctx.author.name}", icon_url= ctx.author.avatar)
+            embedded_msg.set_image(url=pic)
+
+            await ctx.send(embed = embedded_msg)
         except:
-            await ctx.send("Cennot produce random image")
+            await ctx.send("Cannot produce random image")
             print("Random image failed")
 
 
